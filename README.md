@@ -28,6 +28,7 @@ Use Foccci with Clara as the charge controller behind a NACS (SAE J3400) vehicle
 | AC | CCS2: 1 or 3 phases. CCS1: 1 phase / split phase | 1 phase / split phase, up to 80 A **[verify]** |
 | | | Per J3400 section 7.2.2: "Existing deployed AC EVSE in North America using the SAE J3400 coupler utilize nominal single-phase supply voltages from 120 up to 277 VAC, and up to 80 A at 60 Hz when operating under PWM-CP." Verified. |
 | Connector lock | lock actuator in inlet | lock actuator in inlet, depends on the inlet part **[verify]** |
+| | |Per J3400 section 5.1.2: "SAE J3400 inlets shall have a mechanical design according to [section] 10.1 and latch function aqccording to 10.3" Per section 5.1.2.4: " SAE J3400 inlets shall provide a latching mechanism with position monitoring to ensure proper engagement whenever the coupler is energized." Section 10 shows the details of the latch mechanism. Verified. NOTE that if the EV has a CCS1 inlet, the requirement to latch the NACS EVSE connector falls to the adapter that must be used. |
 | Charge port door | – | Tesla handle button sends an RF signal (315 MHz in North America) to open the door. Optional. **[verify]** |
 
 The main consequence: **the same two power pins carry either up to ~1000 V DC or 120/240 V AC.** This is the main topic of the hardware concept.
